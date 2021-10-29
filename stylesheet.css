@@ -1,0 +1,521 @@
+* {
+    /* ----Google Chlomeの無駄な要素をなくすコマンド----- */
+    margin: 0px;
+    padding: 0px;
+}
+    
+
+
+body{
+    background-color: #F0F0F0;
+    width: 100%;
+}
+
+.content-wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1{
+    font-weight: normal;
+    font-size: 36px;
+    letter-spacing:0.3em;
+     /* --- Adobeでは300と表記されている。(その数値÷1000)emと表記する
+            emとはCSS内の初期設定された値から何倍するかという話。 --- */
+}
+
+p,dt,dd{
+    font-size: 14px;
+}
+
+
+
+
+/* ---------------header--------------------- */
+
+ul,li{
+    list-style: none;
+}
+
+header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+#header-left{
+    display: flex;
+    align-items:center;    
+}
+
+header ul{
+    display: flex;
+    align-items:center;
+}
+
+header h1{
+    margin-left: 90px;
+    margin-right: 30px;
+}
+
+header li{
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+header a{
+    width: 200px;
+    height: 80px;
+
+    line-height: 80px;
+
+    color: white;
+    background-color: #000000;
+    text-align: center;
+
+    display: inline-block;
+
+    text-decoration: none;
+        /* ----aの下線を無くすコード----- */
+}
+
+
+/* ----mainvisual----- */
+#mainvisual {
+    width: 100%;
+}
+#mainvisual img{
+    width: 100%;
+    height: calc(100vh - 80px);
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+/* ----NEWS----- */
+.section-wrapper{
+    margin-bottom: 120px;
+}
+
+/* --疑似要素を使って最初のsectionのtopにだけmarginを入れることにより、いい感じになる！-- */
+.section-wrapper:first-child{
+    margin-top: 120px;
+}
+.title-wrapper p{
+    margin-top: 10px;
+    margin-bottom: 36px;
+}
+
+
+/* --疑似要素。これを入れると、要素の一部や前、後にデザインを入れることができる。
+　　　class,idを使わなくてよい。そして、ここから文字を入れることも可能。---- */
+.title-wrapper::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    display: block;
+  }
+
+
+  #news-contents{
+      display: flex;
+      margin-top: 50px;
+  }
+
+  .news-upper{
+      display: flex;
+      margin-bottom: 16px;
+  }
+
+      .news-type{
+      color: white;
+      background-color: black;
+      padding: 1px 7px 1px 7px;
+      margin-left: 10px;
+  }
+
+ .onenews{
+/* --widthを%,calcで指定することでレスポンシブに対応できる。
+　　　また、一個一個のpaddingを設定するのではなく、疑似要素で上手いこと最初と最後をちょこっと編集している。--- */
+    width: calc(100%/3);
+    border-right: solid 1px #000;
+    padding: 10px 20px;
+  }
+
+.onenews:first-child{
+    padding-left: 0px;
+}
+
+.onenews:last-child{
+    border-right: none;
+}
+
+
+
+
+
+/* ----ABOUT----- */
+#about-wrapper{
+    display: flex;
+}
+
+
+
+/* --imgの大きさを直接55%にすると、about-rightの部分抜きの部分で55%になってしまう。-- */
+#about-left{
+    width: 55%;
+}
+
+#about-left img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#about-right{
+    padding: 180px 90px 0px 70px;
+    width: 45%;
+
+    /* ↓↓paddingとborderを幅と高さに含める↓↓ 魔法の言葉。-- */
+              box-sizing: border-box;
+}
+
+#about-text{
+    padding-top: 50px;
+}
+
+
+
+/* ----BUSINESS----- */
+#business-flex{
+    display: flex;
+    width: 100%;
+    padding: 50px 100px 0px 100px;
+    box-sizing: border-box;
+}
+
+#business-flex img{
+/* ----初期設定では画像はそのままの大きさで表示される。
+        絶対Width100%を指定しよう！！----- */
+    width: 100%;
+
+}
+
+
+#business-left{
+    margin-top: 100px;
+    width:50%;
+    margin-right: 64px;
+}
+
+#business-right{
+    width:50%;
+}
+
+.business-onecontents{
+    margin-top: 50px;
+}
+
+
+
+/* ----COMPANY----- */
+#company-flex{
+ /* --↓複雑な配置and重なった配置はposition:relativeとabsoluteで直接値を入れ込む。↓-- */
+ position: relative;
+}
+
+#company-left{
+    width: 55%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 62px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+#company-left dl{
+ display: flex;
+ /* --↓flex-wrapプロパティは、フレックスアイテムの折り返しを指定↓-- */
+ flex-wrap: wrap;
+ padding-top: 50px;
+}
+
+#company-left dt{
+/* --↓dt自体のwidthを大きめに指定すると□□こんな感じになっていい感じに並ぶ↓-- */
+    width: 20%;
+}
+
+#company-left dd{
+    width: 80%;
+    padding-top: 10px;
+}
+#company-left dd:first-child{
+  padding-top: 0px;
+}
+
+.company-dl-last{
+    padding-left: 20%;
+}
+
+
+#company-right{
+    position: absolute;
+    top: 111px;
+    /* --↓leftで指定せずに、right0pxを使うと、company-flexの一番右につけることができる。↓-- */
+    right: 0px;
+    width: 55%;
+    height: 400px;
+}
+
+#company-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* ----footer---- */
+
+footer{
+    height: 209px;
+    background-color: #FFFFFF;
+    padding-bottom: 20px;
+    padding-top:  40px;
+    box-sizing: border-box;
+}
+
+#footer-wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#footer-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 105px;
+    padding-bottom: 26px;
+}
+
+
+
+
+
+
+
+@media screen and ( max-width:900px )
+{
+    .content-wrapper{
+        width: 100%;
+        padding: 16px 16px 16px 16px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+
+    /* ---------------header--------------------- */
+    #header-left{
+        display: block;
+    }
+
+    header h1{
+        margin-left: 16px;
+        margin-right: 0px;
+    }
+
+    header li:first-child{
+        margin-left: 16px;
+    }
+
+
+    header a{
+        display: none;
+    }
+
+    /* ----mainvisual----- */
+    #mainvisual img{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    }
+
+
+    /* ----NEWS----- */
+    .section-wrapper{
+    margin-bottom: 80px;
+    }
+
+    /* --疑似要素を使って最初のsectionのtopにだけmarginを入れることにより、いい感じになる！-- */
+    .section-wrapper:first-child{
+    margin-top: 80px;
+    }
+
+    .title-wrapper p{
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+    
+    
+    .title-wrapper::after {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background-color: #000;
+        display: block;
+      }
+    
+
+
+     #news-contents{
+    flex-wrap: wrap;
+    }
+
+    .onenews{
+        /* --widthを%,calcで指定することでレスポンシブに対応できる。
+        　　　また、一個一個のpaddingを設定するのではなく、疑似要素で上手いこと最初と最後をちょこっと編集している。--- */
+    width:100%;
+    padding-left: 0px;
+    padding-bottom: 40px;
+    border-right: none;
+    }
+
+
+    /* ----ABOUT----- */
+    #about-wrapper{
+    flex-wrap: wrap;
+    }
+
+    /* --imgの大きさを直接55%にすると、about-rightの部分抜きの部分で55%になってしまう。-- */
+    #about-left{
+    width: 100%
+    }
+
+    #about-left img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    }
+
+    #about-right{
+    padding: 30px 16px 0px 16px;
+    width: 100%;
+    }
+
+    /* ----BUSINESS----- */
+    #business-flex{
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0px;
+    }
+
+    #business-flex img{
+    /* ----初期設定では画像はそのままの大きさで表示される。
+        絶対Width100%を指定しよう！！----- */
+    width: calc(100%-32px);
+
+    }
+
+
+    #business-left{
+    margin-top: 0px;
+    width:100%;
+    margin-right: 0px;
+}
+
+#business-right{
+    width: 100%;
+}
+
+.business-onecontents{
+    margin-top: 50px;
+}
+
+
+/* ----COMPANY----- */
+    #company-flex{
+    /* --↓複雑な配置and重なった配置はposition:relativeとabsoluteで直接値を入れ込む。↓-- */
+    position: static;
+   }
+   
+   #company-left{
+       width: 100%;
+       padding-top: 40px;
+       padding-bottom: 40px;
+       padding-left: 20px;
+       box-sizing: border-box;
+       background-color: #FFFFFF;
+   }
+   #company-left dl{
+    display: block;
+    /* --↓flex-wrapプロパティは、フレックスアイテムの折り返しを指定↓-- */
+    padding-top: 50px;
+   }
+   
+   #company-left dt{
+   /* --↓dt自体のwidthを大きめに指定すると□□こんな感じになっていい感じに並ぶ↓-- */
+       padding-top: 8px;
+   }
+   
+   #company-left dd{
+       width: 100%;
+       padding-top: 5px;
+       padding-left: 14px;
+   }
+   #company-left dd:first-child{
+     padding-top: 8px;
+   }
+
+   #company-dd-web{
+       padding-top: 8px;
+   }
+   
+
+   
+   
+   #company-right{
+       width: 100%;
+       height: 400px;
+       position: static;
+       padding-top: 20px;
+   }
+   
+   #company-right img{
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+   }
+   
+   /* ----footer---- */
+
+    footer{
+    height: 100%;
+    background-color: #FFFFFF;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#footer-flex{
+    display: block;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 26px;
+    box-sizing: border-box;
+}
+
+#footer-wrapper{
+    width: 100%;
+    margin: 0 0;
+    padding: 40px 0px 20px 16px;
+    box-sizing: border-box;
+}
+
+
+
+}
