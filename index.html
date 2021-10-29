@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href=C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\stylesheet.css>
+    <!-- ↓レスポンシブの設定のひとつ。　利用者がアクセス時に使用した機器について、画面サイズなどの情報を入手する↓-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+
+  <body>
+    <header>
+        <div id="header-left">
+            <h1>WED</h1>
+            <nav>
+                <ul>
+                    <li>NEWS</li>
+                    <li>ABOUT</li>
+                    <li>BUSINESS</li>
+                    <li>COMPANY</li>
+                </ul>
+            </nav>
+        </div>        
+        <div id="header-right">
+            <a href="#documents">資料請求</a>
+        </div>
+    </header>
+
+
+
+    <div id="mainvisual">
+      <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\mainvisual.jpg" alt="mainvisual">
+    </div>
+
+
+
+    <div class="content-wrapper">
+      <section class="section-wrapper">
+        <div class="title-wrapper">
+          <h1>NEWS</h1>
+          <p>ニュース</p>
+        </div>
+
+        <div id="news-contents">
+          <div class="onenews">
+            <div class="news-upper">
+              <p class="news-date">2021.01.01</p>
+              <p class="news-type">NEWS</p>
+            </div>
+            <p class="news-title">タイトルタイトルタイトルタイトル</p>
+          </div>
+          
+          <div class="onenews">
+            <div class="news-upper">
+              <p class="news-date">2021.01.01</p>
+              <p class="news-type">PRESS</p>
+            </div>
+            <p class="news-title">タイトルタイトルタイトルタイトル</p>
+          </div>
+
+          <div class="onenews">
+            <div class="news-upper">
+              <p class="news-date">2021.01.01</p>
+              <p class="news-type">NEWS</p>
+            </div>
+            <p class="news-title">タイトルタイトルタイトルタイトル</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <section class="section-wrapper">
+      <div id="about-wrapper">
+        <div id="about-left">
+          <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\about.jpg" alt="">
+        </div>
+        <div id="about-right">
+          <div class="title-wrapper">
+            <h1>ABOUT</h1>
+            <p>私たちについて</p>
+          </div>
+          <p id="about-text">テキストテキストテキストテキストテキストテキストテキストテキストテキ
+            ストテキストテキストテキスト<br>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキ
+            ストテキストテキストテキスト<br>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキ
+            ストテキストテキストテキスト</p>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="content-wrapper">
+      <section class="section-wrapper">
+        <div class="title-wrapper">
+          <h1>BUSINESS</h1>
+          <p>事業内容</p>
+        </div>
+
+        <div id="business-flex">
+          <div id="business-left">
+            <div class="business-onecontents">
+              <p>- Web制作・マーケティング</p>
+              <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\business1.jpg">
+            </div>
+            <div class="business-onecontents">
+              <p>- インターネットメディア事業</p>
+              <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\business2.jpg">
+            </div>
+          </div>
+
+          <div id="business-right">
+            <div class="business-onecontents">
+              <p>- プロモーション企画・制作</p>
+              <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\business3.jpg">
+            </div>
+
+            <div class="business-onecontents">
+              <p>- Web制作・マーケティング</p>
+              <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\business4.jpg">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section-wrapper">
+        <div id="company-flex">
+          <div id="company-left">
+            <div class="title-wrapper">
+              <h1>COMPANY</h1>
+              <p>会社情報</p>
+            </div>
+
+                <!-- ↓『dl=description list』(定義リスト)dtで名前を指定し、dlでdtを説明する。
+                  これを使うと  名前  のぶ
+                       年齢  ２０ 　このようにきれいに並べることができる。↓-->
+            <dl>
+              <dt>会社名</dt>
+              <dd>ウェブエンターテイメントデザイン株式会社</dd>
+              <dt>所在地</dt>
+              <dd>東京都渋谷区桜丘町99-9 West Building 3F</dd>
+              <dt>代表</dt>
+              <dd>ＸＸＸＸＸＸ</dd>
+              <dt>設立</dt>
+              <dd>2021年1月1日</dd>
+              <dt>資本金</dt>
+              <dd>3,000,000円</dd><br>
+              <dt>事業内容</dt>
+              <dd>Web制作・マーケティング</dd>
+              <dd class="company-dl-last">インターネットメディア事業</dd>
+              <dd class="company-dl-last">  プロモーション企画・制作</dd>
+              <dd class="company-dl-last">ソーシャル企画・運営</dd>
+            </dl>
+          </div>
+
+          <div id="company-right">
+            <img src="C:\Users\koiko\OneDrive\デスクトップ\プログラミング\HTML_CSS\Lesson3\img\company.jpg" alt="">
+          </div>
+
+      </section>
+     </div>
+
+
+    <footer>
+      <div id="footer-wrapper">
+        <div id="footer-flex">
+          <div id="footer-left">
+            <h1>WED</h1>
+          </div>
+          <div id="footer-right">
+            <p>Web Entertainment Design Inc.<br>
+              West Building 3F<br>
+              9-99 Sakuragaokacho Shibuya-ku<br>
+              Tokyo, Japan 150-0031<br>
+              T/99-9999-9999</p>
+          </div>
+        </div>
+        <p id="footer-under">&copy;Web Entertainment Design Inc.</p>
+      </div>
+    </footer>
+
+
+  </body>
